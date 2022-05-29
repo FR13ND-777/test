@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first site</title>
+    {% block script %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Comforter+Brush&family=Lobster&family=Montserrat&display=swap"
+    rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+    <header class="nuv">
+        <div class="menu_logo">
+            <h1 class="logo">Мой Блог</h1>
+        </div>
+        <div class="menu_img">
+            <img src="{{ url_for('static', filename='img/1.png') }}" class="img">
+        </div>
+        <div>
+            <ul class="menu__ul">
+                <li><a href="/" class="menu__link">Главная</a></li>
+                <li><a href="/about/" class="menu__link">Обо мне</a></li>
+                <li><a href="/contact/" class="menu__link">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
